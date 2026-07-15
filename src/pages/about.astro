@@ -1,0 +1,10 @@
+---
+import AboutInfo from "../components/about/AboutInfo.vue";
+import Layout from "../layouts/Layout.astro";
+
+const content = 'bla bla bla bla bla'; // make the api call to load data in astro
+---
+<Layout>
+    <h1>About</h1>
+    <AboutInfo client:load content={content} />
+</Layout>

@@ -1,0 +1,12 @@
+---
+import TestAstro from '../components/landingPage/TestAstro.astro';
+import TestVue from '../components/landingPage/TestVue.vue';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<TestAstro type="SSR" />
+	<TestVue type="SSR - BUTTON WILL NOT WORK" />
+	<TestVue client:load type="SSR with hydration" />
+	<TestVue client:only="vue" type="CSR" />
+</Layout>

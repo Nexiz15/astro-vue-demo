@@ -1,0 +1,35 @@
+---
+const { type } = Astro.props;
+
+const prop = `ASTRO ${type}`
+---
+
+<script>
+	let counter = 0;
+
+	const btn = document.getElementById('btn');
+	const counterEl = document.getElementById('counter');
+
+	btn?.addEventListener('click', () => {
+		counter++;
+		counterEl!.textContent = String(counter);
+	});
+</script>
+
+<div id="astro">
+	<h1>Astro Component</h1>
+	<p>{prop}</p>
+	<span id="counter">0</span>
+	<button id="btn">UP UP UP</button>
+</div>
+
+<style>
+	#astro {
+		background: rgb(255 70 184 / 0.30);
+	}
+
+	// this should do nothing
+	#vue {
+		background: red !important;
+	}
+</style>
