@@ -2,7 +2,9 @@
 import AboutInfo from "../components/about/AboutInfo.vue";
 import Layout from "../layouts/Layout.astro";
 
-const content = 'bla bla bla bla bla'; // make the api call to load data in astro
+const url = new URL('/api/hello', Astro.url);
+const response = await fetch(url); // fetch api call in astro
+const content = (await response.json()).message;
 ---
 <Layout>
     <h1>About</h1>
